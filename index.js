@@ -11,7 +11,7 @@ const port = 3000;
 
 app.use(cors())
 app.use(express.json())
-app.use(express.static(path.resolve(__dirname, process.env.PUBLIC_DIR)))
+// app.use(express.static(path.resolve(__dirname, process.env.PUBLIC_DIR)))
 app.use("/api", tasksRouter.router)
 app.use("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
